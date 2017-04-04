@@ -12,7 +12,8 @@
 		// You can grab the todo we clicked by using the event object
 
 	// Next, we'll want to bind to the form's submit event. When the form is
-	// submitted, we'll want to add a new todo.
+	// submitted, we'll want to add a new todo. Don't forget to prevent default
+	// the event, or it'll refresh the page!
 
 		// Grab the text from the input element using the `val()` function, and make
 		// a new todo element with that text. Alert the user of an error if they
