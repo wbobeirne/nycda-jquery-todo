@@ -39,3 +39,5 @@
 // if there's something that tells us what keys they're holding?
 
 // BONUS: Don't allow them to add the same todo twice, warn them if they try to
+
+// BONUS: Make the title editable without having to change the HTML file

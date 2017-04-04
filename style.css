@@ -8,10 +8,16 @@ body {
 }
 
 .todo {
-	padding: 20px 0;
+	padding: 20px;
 	width: 100%;
 	max-width: 400px;
 	margin: 0 auto;
+}
+
+.todo-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 .todo-list {
@@ -27,6 +33,7 @@ body {
 	cursor: pointer;
 
 	color: #222;
+	font-weight: 300;
 	text-shadow: 1px 1px 1px #FFF;
 
 	background: linear-gradient(to bottom, #FFF, #F5F5F5);
@@ -64,6 +71,7 @@ body {
 	background: #FFF;
 	border: 1px solid #CCC;
 	font-size: 18px;
+	font-weight: 300;
 }
 
 .todo-addform-submit {
@@ -75,6 +83,7 @@ body {
 	border-radius: 2px;
 	color: #FFF;
 	font-size: 32px;
+	font-weight: 700;
 	background: linear-gradient(to bottom, #3cc75a, #158619);
 	border: none;
 	opacity: 0.9;
