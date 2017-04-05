@@ -1,30 +1,50 @@
-// Wrap everything we're about to do in a document ready function
+/* globals $ */
 
+// Wrap everything we're about to do in a document ready function
+$(document).ready(function() {
 	// Cache our jQuery element selectors. We'll need:
 	// * The todo list
 	// * The addform input
 	// * The addform form element
+	var $list = $(".todo-list");
+	var $input = $(".todo-addform-input");
+	var $form = $(".todo-addform");
 
 	// First we should add the ability to click on list items to cross them out.
 	// Clicking on a list item should add the "crossed" class to it. Remember to
 	// use a child selector with the event, because we'll be adding todos later.
-
+	$list.on("click", ".todo-list-item", function(event) {
 		// You can grab the todo we clicked by using the event object
+		$(event.currentTarget).addClass("crossed");
+	});
 
 	// Next, we'll want to bind to the form's submit event. When the form is
 	// submitted, we'll want to add a new todo. Don't forget to prevent default
 	// the event, or it'll refresh the page!
+	$form.on("submit", function(event) {
+		event.preventDefault();
 
 		// Grab the text from the input element using the `val()` function, and make
 		// a new todo element with that text. Alert the user of an error if they
 		// entered no text.
+		var text = $input.val();
+
+		if (!text) {
+			alert("You must enter text");
+			return;
+		}
+
+		var $listItem = $('<li class="todo-list-item">' + text + '</li>');
 
 		// Insert the new element in the todo list
+		$list.append($listItem);
 
 		// Don't forget to clear out the value of the input! Hint: if we can get
 		// html using html(), and set it using html(string), maybe val() works
 		// in a similar way? Read the docs!
-
+		$input.val("");
+	});
+});
 
 
 // And that's it! You're done! Got some free time? Try some of the BONUS tasks
